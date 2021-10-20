@@ -21,11 +21,6 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/masuk', function () {
-    return view('login', [
-        "title" => "Login"
-    ]);
-});
 
 Route::get('/home', function () {
     return view('home', [
@@ -34,7 +29,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/santri','App\Http\Controllers\Santri@index');
-Route::get('/tambahSantri','App\Http\Controllers\Santri@tambah');
+Route::get('/tambahsantri','App\Http\Controllers\Santri@tambah');
 
 
 Route::get('/peran','App\Http\Controllers\Peran@index');
