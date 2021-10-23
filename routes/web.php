@@ -22,13 +22,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', function () {
-    return view('home', [
-        "title" => "Home"
-    ]);
-});
-
-Route::get('/santri','App\Http\Controllers\Santri@index');
+Route::get('/dashboard','App\Http\Controllers\Pengurus@index');
 Route::get('/tambahsantri','App\Http\Controllers\Santri@tambah');
 
 

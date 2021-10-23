@@ -1,4 +1,4 @@
-@extends('layout/main')
+@extends('layout/author')
 @section('content')
 <h1>Data Peran</h1>
 
@@ -28,7 +28,7 @@
 	</tr>
 	@endforeach
 	</tbody>
-	
+
 </table>
 
 @endsection

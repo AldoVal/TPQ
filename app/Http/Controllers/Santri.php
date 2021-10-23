@@ -14,12 +14,12 @@ class Santri extends Controller
 		$santri = ModelSantri::all();
 		return view('staff.santri.santri',['santri' => $santri]);
 	}
- 
+
 	public function tambah()
 	{
-		return view('tambahsantri');
+		return view('staff.santri.tambahsantri');
 	}
- 
+
 	public function store(Request $request)
 	{
 		DB::table('santri')->insert([
@@ -38,13 +38,13 @@ class Santri extends Controller
 		]);
 		return redirect('/tambahsantri');
 	}
- 
+
 	public function edit($id)
 	{
 		$santri = DB::table('santri')->where('IDSANTRI',$id)->get();
-		return view('editsantri',['santri' => $santri]);
+		return view('staff.santri.editsantri',['santri' => $santri]);
 	}
- 
+
 	public function update(Request $request)
 	{
 		DB::table('santri')->where('IDSANTRI',$request->id)->update([
@@ -63,7 +63,7 @@ class Santri extends Controller
 		]);
 		return redirect('/santri');
 	}
- 
+
 	public function hapus($id)
 	{
 		DB::table('santri')->where('IDSANTRI',$id)->delete();

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\ModelPengurus;
+use App\Models\ModelPengurus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\COntrollers\Controller;
