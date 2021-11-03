@@ -3,15 +3,15 @@
 	<title>PENGURUS|Edit</title>
 </head>
 <body>
- 
+
 	<h2>Coba Edit</h2>
 	<h3>Detail Peran</h3>
- 
+
 	<a href="/detailperan/tambah"> + Tambah Peran</a>
-	
+
 	<br/>
 	<br/>
- 
+
 	<table border="1">
 		<tr>
 			<th>ID_santri</th>
@@ -20,14 +20,14 @@
 		<tr>
             <td>{{ $s->IDSANTRI }}</td>
 			<td>
-				<a href="/santri/edit/{{ $U->IDSANTRI }}">Edit</a>
+				<a href="/peran/edit/{{ $U->IDSANTRI }}">Edit</a>
 				|
-				<a href="/santri/hapus/{{ $U->IDSANTRI}}">Hapus</a>
+				<a href="/peran/hapus/{{ $U->IDSANTRI}}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
- 
- 
+
+
 </body>
 </html>

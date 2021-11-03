@@ -1,6 +1,6 @@
 @extends('layout/author')
 @section('content')
-<h1>Data Peran</h1>
+<h1>Data Pengurus</h1>
 
 <br/>
 <br/>
@@ -10,9 +10,7 @@
 		<tr>
 			<th>ID</th>
 			<th>Nama</th>
-			<th>Email</th>
-            <th>HP</th>
-            <th>Gender</th>
+            <th>Status</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -20,10 +18,6 @@
 	<tr>
 		<td>{{ $p->IDPENGURUS }}</td>
 		<td>{{ $p->NAMA }}</td>
-		<td>{{ $p->EMAIL }}</td>
-        <td>{{ $p->HP }}</td>
-		<td>{{ $p->GENDER }}</td>
-		<td>{{ $p->PASSWORD }}</td>
         <td>{{ $p->AKTIF }}</td>
 	</tr>
 	@endforeach
