@@ -1,6 +1,6 @@
-@extends('layout/guru')
+@extends('layout/wali')
 @section('content')
-<h1>Data Kemajuan</h1>
+<h1>Kemajuan</h1>
 
 <br/>
 <br/>
@@ -12,8 +12,8 @@
 			<th>ID SANTRI</th>
 			<th>ID PENGURUS</th>
 			<th>TANGGAL</th>
-			<th>STATUS</th>
-            <th>Edit</th>
+			{{-- <th>STATUS</th>
+            <th>Edit</th> --}}
 		</tr>
 	</thead>
 	<tbody>
@@ -24,12 +24,12 @@
 		<td>{{ $k->IDPENGURUS }}</td>
 		<td>{{ $k->TANGGAL }}</td>
 		<td>{{ $k->STATUS }}</td>
-        <td>
+        {{-- <td>
             <form action="{{ url('/editkemajuan') }}" method="get">
                 <input hidden value="{{ $k->IDKEMAJUAN }}" name="IDKEMAJUAN">
                 <button type="submit" class="btn btn-info btn-sm")>Edit</button>
             </form>
-        </td>
+        </td> --}}
         {{-- <td>
             <a href="{{ url('/hapussantri',$k->IDKEMAJUAN) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
         </td> --}}
@@ -38,5 +38,6 @@
 	</tbody>
 
 </table>
+
 
 @endsection

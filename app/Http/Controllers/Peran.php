@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ModelDetailPeran;
 use App\Models\ModelPeran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -13,19 +12,19 @@ class Peran extends Controller
 {
     public function index(){
         $peran = ModelPeran::all();
-        return view('staff.peran.peran',['peran'=>$peran]);
+        return view('display.peran',['peran'=>$peran]);
     }
 
     public function tambah(){
-        return view('staff.peran.tambahperan');
+        return view('tambah.peran');
     }
 
     public function store(Request $request)
 	{
 		DB::table('peran')->insert([
-			'IDPERAN' => $request->idperan,
-			'PERAN' => $request->peran,
-			'AKTIF' => $request->status
+			'IDPERAN' => $request->IDPERAN,
+			'PERAN' => $request->PERAN,
+			'AKTIF' => $request->AKTIF
 		]);
 		return redirect('/peran');
 	}
@@ -33,7 +32,7 @@ class Peran extends Controller
 	public function edit(Request $request)
 	{
 		$peran = DB::table('peran')->where('IDPERAN',$request)->get();
-		return view('staff.peran.editperan',['peran' => $peran],['request' => $request]);
+		return view('edit.peran',['peran' => $peran],['request' => $request]);
 	}
 
 	public function update(Request $request)
@@ -47,9 +46,9 @@ class Peran extends Controller
 		DB::table('peran')
         ->where('IDPERAN',$request->idperan)
         ->update([
-			// 'IDPERAN' => $request->idperan,
-			'PERAN' => $request->peran,
-			'AKTIF' => $request->status
+			'IDPERAN' => $request->IDPERAN,
+			'PERAN' => $request->PERAN,
+			'AKTIF' => $request->AKTIF
 		]);
 		return redirect('/peran');
 	}

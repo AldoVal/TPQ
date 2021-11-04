@@ -1,6 +1,6 @@
-@extends('layout/author')
+@extends('layout/wali')
 @section('content')
-<h1>Detail Peran</h1>
+<h1>Detail Kemajuan</h1>
 
 <br/>
 <br/>
@@ -9,18 +9,18 @@
 	<thead>
 		<tr>
 			<th>ID Detail</th>
-			<th>ID Peran</th>
-			<th>ID PENGURUS</th>
-            <th>Edit</th>
-            <th>Delete</th>
+			<th>ID KEMAJUAN</th>
+			<th>ID BAB</th>
+            <th>KETERANGAN</th>
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($peran as $p)
+		@foreach($detailkemajuan as $k)
 	<tr>
-		<td>{{ $p->IDDETAILPERAN }}</td>
-		<td>{{ $p->IDPERAN }}</td>
-		<td>{{ $p->IDPENGURUS }}</td>
+		<td>{{ $k->IDDETAILKEMAJUAN }}</td>
+		<td>{{ $k->IDKEMAJUAN }}</td>
+		<td>{{ $k->IDBAB }}</td>
+        <td>{{ $k->KETERANGAN }}</td>
         {{-- <td>
             <form action="{{ url('/editperan') }}" method="get">
                 <input hidden value="{{ $p->IDPERAN }}" name="IDPERAN">
@@ -34,7 +34,5 @@
 
 	    @endforeach
 	</tbody>
-
-</table>
 
 @endsection

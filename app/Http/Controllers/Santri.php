@@ -12,54 +12,54 @@ class Santri extends Controller
     public function index()
 	{
 		$santri = ModelSantri::all();
-		return view('staff.santri.santri',['santri' => $santri]);
+		return view('display.santri',['santri' => $santri]);
 	}
 
 	public function tambah()
 	{
-		return view('staff.santri.tambahsantri');
+		return view('tambah.santri');
 	}
 
 	public function store(Request $request)
 	{
 		DB::table('santri')->insert([
-			'IDSANTRI' => $request->idsantri,
-			'NAMASANTRI' => $request->namasantri,
-			'GENDER' => $request->gender,
-			'TGLLAHIR' => $request->tgllahir,
-            'KOTALAHIR' => $request->kotalahir,
-            'NAMAORTU' => $request->namaortu,
-            'ALAMATORTU' => $request->alamatortu,
-            'HP' => $request->hp,
-            'EMAIL' => $request->email,
-            'PASSWORD' => $request->password,
-            'TANGGALMASUK' => $request->tglmasuk,
-            'AKTIF' => $request->aktif
+			'IDSANTRI' => $request->IDSANTRI,
+			'NAMASANTRI' => $request->NAMASANTRI,
+			'GENDER' => $request->GENDER,
+			'TGLLAHIR' => $request->TGLLAHIR,
+            'KOTALHR' => $request->KOTALHR,
+            'NAMAORTU' => $request->NAMAORTU,
+            'ALAMATORTU' => $request->ALAMATORTU,
+            'HP' => $request->HP,
+            'EMAIL' => $request->EMAIL,
+            'PASSWORD' => $request->PASSWORD,
+            'TANGGALMASUK' => $request->TANGGALMASUK,
+            'AKTIF' => $request->AKTIF
 		]);
-		return redirect('/tambahsantri');
+		return redirect('/santri');
 	}
 
-	public function edit($id)
+	public function edit(Request $request)
 	{
-		$santri = DB::table('santri')->where('IDSANTRI',$id)->get();
-		return view('staff.santri.editsantri',['santri' => $santri]);
+		$santri = DB::table('santri')->where('IDSANTRI',$request)->get();
+		return view('edit.santri',['santri' => $santri],['request' => $request]);
 	}
 
 	public function update(Request $request)
 	{
 		DB::table('santri')->where('IDSANTRI',$request->id)->update([
-			'IDSANTRI' => $request->idsantri,
-			'NAMASANTRI' => $request->namasantri,
-			'GENDER' => $request->gender,
-			'TGLLAHIR' => $request->tgllahir,
-            'KOTALAHIR' => $request->kotalahir,
-            'NAMAORTU' => $request->namaortu,
-            'ALAMATORTU' => $request->alamatortu,
-            'HP' => $request->hp,
-            'EMAIL' => $request->email,
-            'PASSWORD' => $request->password,
-            'TANGGALMASUK' => $request->tglmasuk,
-            'AKTIF' => $request->aktif
+			'IDSANTRI' => $request->IDSANTRI,
+			'NAMASANTRI' => $request->NAMASANTRI,
+			// 'GENDER' => $request->GENDER,
+			// 'TGLLAHIR' => $request->TGLLAHIR,
+            // 'KOTALAHIR' => $request->KOTALAHIR,
+            // 'NAMAORTU' => $request->NAMAORTU,
+            // 'ALAMATORTU' => $request->ALAMATORTU,
+            'HP' => $request->HP,
+            'EMAIL' => $request->EMAIL,
+            // 'PASSWORD' => $request->PASSWORD,
+            // 'TANGGALMASUK' => $request->TANGGALMASUK,
+            'AKTIF' => $request->AKTIF
 		]);
 		return redirect('/santri');
 	}

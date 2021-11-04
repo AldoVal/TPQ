@@ -9,7 +9,7 @@
 			<div class="content">
 				<div class="row mb-3">
 				<input type="hidden" class="form-control" name='id' value="{{ $request->id }}"/>
-					{{-- <label for="inputNamaBarang" class="col-sm-2 col-form-label ">ID Peran</label> --}}
+					<label  class="col-sm-2 col-form-label ">ID Peran</label>
 					<div class="col-sm-4">
 					  <input type="text" placeholder="{{ $request->IDPERAN }}" class="form-control" name='IDPERAN'>
 					</div>

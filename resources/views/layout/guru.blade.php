@@ -35,7 +35,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">TPQ<sup>wali</sup></div>
+                <div class="sidebar-brand-text mx-3">TPQ<sup>guru</sup></div>
             </a>
 
             <!-- Divider -->
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/wali">
+                <a class="nav-link" href="/guru">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -53,43 +53,43 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Data Santri
+                Data Master
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Santri</span>
+                    <span>Kemajuan</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Santri :</h6>
-                        <a class="collapse-item" href="/">Data Santri</a>
-                        <a class="collapse-item" href="/santri">Santri</a>
+                        <a class="collapse-item" href="/kemajuan">Kemajuan</a>
+                        <a class="collapse-item" href="/detailkemajuan">Detail Kemajuan</a>
                     </div>
                 </div>
-            </li> --}}
+            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Kemajuan</span>
+                    <span>Peran</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Data Kemajuan :</h6>
-                        <a class="collapse-item" href="/kemajuansantri">Kemajuan</a>
-                        {{-- <a class="collapse-item" href="/editperan">Edit Peran</a> --}}
-                        {{-- <a class="collapse-item" href="/tambahperan">Tambah Peran</a> --}}
-                        <a class="collapse-item" href="/detailkemajuansantri">Detail Kemajuan</a>
+                        <h6 class="collapse-header">Data Peran :</h6>
+                        <a class="collapse-item" href="/detailperan">Detail Peran</a>
+                        <a class="collapse-item" href="/editperan">Edit Peran</a>
+                        <a class="collapse-item" href="/tambahperan">Tambah Peran</a>
+                        <a class="collapse-item" href="/peran">Peran</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">
