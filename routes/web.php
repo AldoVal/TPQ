@@ -17,11 +17,12 @@ use App\Http\Controllers\DataPengurusController;
 |
 */
 
-Route::get('/', function () {
-    return view('halamanlogin');
-});
+Route::get('/','App\Http\Controllers\Login@index');
+Route::post('/login','App\Http\Controllers\Login@authenticate');
+Route::get('/register','App\Http\Controllers\Register@index');
 
 
+//CRUD Staff
 Route::get('/author','App\Http\Controllers\Pengurus@index');
 
 Route::get('/santri','App\Http\Controllers\Santri@index');
@@ -39,6 +40,7 @@ Route::post('/simpanperan','App\Http\Controllers\Peran@store');
 Route::get('/hapusperan/{IDPERAN}','App\Http\Controllers\Peran@hapus');
 Route::get('/detailperan','App\Http\Controllers\DetailPeran@index');
 
+//CRUD Guru
 Route::get('/guru','App\Http\Controllers\Guru@index');
 
 Route::get('/kemajuan','App\Http\Controllers\Kemajuan@index');
@@ -46,6 +48,7 @@ Route::get('/detailkemajuan','App\Http\Controllers\DetailKemajuan@index');
 Route::get('/editkemajuan','App\Http\Controllers\Kemajuan@edit');
 Route::post('/proseskemajuan','App\Http\Controllers\Kemajuan@update');
 
+//CRUD Wali
 Route::get('/wali','App\Http\Controllers\DataSantri@index');
 Route::get('/kemajuansantri','App\Http\Controllers\DataSantri@kemajuan');
 Route::get('/detailkemajuansantri','App\Http\Controllers\DataSantri@detailkemajuan');

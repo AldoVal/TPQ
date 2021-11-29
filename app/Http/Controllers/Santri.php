@@ -14,6 +14,10 @@ class Santri extends Controller
 		$santri = ModelSantri::all();
 		return view('display.santri',['santri' => $santri]);
 	}
+    public function create()
+    {
+        //
+    }
 
 	public function tambah()
 	{
