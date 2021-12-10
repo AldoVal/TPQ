@@ -24,11 +24,11 @@
                         <div class="card-body">
 
                             {{-- jangan d hapus komen ini boiii --}}
-                            <form action="/login" method="post">
+                            <form action="/login" method="post" role="form">
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control"  id="inputEmail"  name="id" placeholder="ID" required/>
+                                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required/>
                                         @error('email')
                                             <div class="invalid-feedback">
                                             {{ $message }}
@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control"  id="inputPassword" type="password"  maxlength="32" name="password" placeholder="Password" required/>
+                                        <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" minlength="8" maxlength="32" name="password" placeholder="Password" required/>
                                         @error('email')
                                             <div class="invalid-feedback">
                                             {{ $message }}
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="form-check mb-3">
-                                    {{-- <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" /> --}}
+                                    <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
                                     {{-- <label class="form-check-label" for="inputRememberPassword">Ingat Password</label> --}}
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">

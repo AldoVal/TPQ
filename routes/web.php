@@ -26,11 +26,11 @@ Route::get('/register','App\Http\Controllers\Register@index');
 Route::get('/author','App\Http\Controllers\Pengurus@index');
 
 Route::get('/santri','App\Http\Controllers\Santri@index');
-Route::get('/tambahsantri','App\Http\Controllers\Santri@tambah');
-Route::post('/simpansantri','App\Http\Controllers\Santri@store');
-Route::get('/editsantri','App\Http\Controllers\Santri@edit');
-Route::post('/proseseditsantri{IDSANTRI}','App\Http\Controllers\Santri@update');
-Route::get('/hapussantri{IDSANTRI}','App\Http\Controllers\Santri@hapus');
+Route::get('/santri-tambah','App\Http\Controllers\Santri@tambah');
+Route::post('/santri-simpan','App\Http\Controllers\Santri@store');
+Route::get('/santri-edit','App\Http\Controllers\Santri@edit');
+Route::post('/santri-update{IDSANTRI}','App\Http\Controllers\Santri@update');
+Route::get('/santri-delete{IDSANTRI}','App\Http\Controllers\Santri@hapus');
 
 Route::get('/peran','App\Http\Controllers\Peran@index');
 Route::get('/editperan','App\Http\Controllers\Peran@edit');
@@ -42,7 +42,6 @@ Route::get('/detailperan','App\Http\Controllers\DetailPeran@index');
 
 //CRUD Guru
 Route::get('/guru','App\Http\Controllers\Guru@index');
-
 Route::get('/kemajuan','App\Http\Controllers\Kemajuan@index');
 Route::get('/detailkemajuan','App\Http\Controllers\DetailKemajuan@index');
 Route::get('/editkemajuan','App\Http\Controllers\Kemajuan@edit');

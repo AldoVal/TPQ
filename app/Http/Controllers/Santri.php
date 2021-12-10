@@ -11,6 +11,7 @@ class Santri extends Controller
 {
     public function index()
 	{
+
 		$santri = ModelSantri::all();
 		return view('display.santri',['santri' => $santri]);
 	}
