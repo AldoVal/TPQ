@@ -6,7 +6,6 @@ use App\Models\ModelPeran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\COntrollers\Controller;
-use Illuminate\Support\Facades\Redis;
 
 class Peran extends Controller
 {
@@ -24,7 +23,6 @@ class Peran extends Controller
 		DB::table('peran')->insert([
 			'IDPERAN' => $request->IDPERAN,
 			'PERAN' => $request->PERAN,
-			'AKTIF' => $request->AKTIF
 		]);
 		return redirect('/peran');
 	}
@@ -37,12 +35,6 @@ class Peran extends Controller
 
 	public function update(Request $request)
 	{
-        // $peran = ModelPeran::all()->find($idperan);
-               //     $peran = ModelPeran::where($id);
-        // $peran->peran       = $request->input('PERAN');
-        // $peran->status      = $request->input('AKTIF');
-        // $peran->save();
-
 		DB::table('peran')
         ->where('IDPERAN',$request->idperan)
         ->update([

@@ -26,13 +26,13 @@
 		<td>{{ $s->TGLLAHIR }}</td>
 		<td>{{ $s->KOTALHR }}</td>
         <td>
-            <form action="{{ url('/editsantri') }}" method="get">
-                <input hidden value="{{ $s->IDSANTRI }}" name="IDPERAN">
+            <form action="{{ url('/santri-edit') }}" method="get">
+                <input hidden value="{{ $s->IDSANTRI }}" name="IDSANTRI">
                 <button type="submit" class="btn btn-info btn-sm")>Edit</button>
             </form>
         </td>
         <td>
-            <a href="{{ url('/hapussantri',$s->IDSANTRI) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
+            <a href="{{ url('/santri-hapus',$s->IDSANTRI) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
         </td>
 	</tr>
 	@endforeach

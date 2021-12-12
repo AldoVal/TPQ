@@ -11,14 +11,9 @@ class Santri extends Controller
 {
     public function index()
 	{
-
 		$santri = ModelSantri::all();
 		return view('display.santri',['santri' => $santri]);
 	}
-    public function create()
-    {
-        //
-    }
 
 	public function tambah()
 	{
@@ -28,7 +23,7 @@ class Santri extends Controller
 	public function store(Request $request)
 	{
 		DB::table('santri')->insert([
-			'IDSANTRI' => $request->IDSANTRI,
+			// 'IDSANTRI' => $request->IDSANTRI,
 			'NAMASANTRI' => $request->NAMASANTRI,
 			'GENDER' => $request->GENDER,
 			'TGLLAHIR' => $request->TGLLAHIR,
@@ -38,8 +33,8 @@ class Santri extends Controller
             'HP' => $request->HP,
             'EMAIL' => $request->EMAIL,
             'PASSWORD' => $request->PASSWORD,
-            'TANGGALMASUK' => $request->TANGGALMASUK,
-            'AKTIF' => $request->AKTIF
+            // 'TANGGALMASUK' => $request->TANGGALMASUK,
+            // 'AKTIF' => $request->AKTIF
 		]);
 		return redirect('/santri');
 	}
@@ -52,18 +47,12 @@ class Santri extends Controller
 
 	public function update(Request $request)
 	{
-		DB::table('santri')->where('IDSANTRI',$request->id)->update([
-			'IDSANTRI' => $request->IDSANTRI,
-			'NAMASANTRI' => $request->NAMASANTRI,
-			// 'GENDER' => $request->GENDER,
-			// 'TGLLAHIR' => $request->TGLLAHIR,
-            // 'KOTALAHIR' => $request->KOTALAHIR,
-            // 'NAMAORTU' => $request->NAMAORTU,
-            // 'ALAMATORTU' => $request->ALAMATORTU,
+		DB::table('santri')
+        ->where('IDSANTRI',$request->idsantri)
+        ->update([
+            'ALAMATORTU' => $request->ALAMATORTU,
             'HP' => $request->HP,
             'EMAIL' => $request->EMAIL,
-            // 'PASSWORD' => $request->PASSWORD,
-            // 'TANGGALMASUK' => $request->TANGGALMASUK,
             'AKTIF' => $request->AKTIF
 		]);
 		return redirect('/santri');

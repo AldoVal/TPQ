@@ -13,93 +13,93 @@
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('nama') is-invalid @enderror" id="inputName" name="nama" type="text" minlength="3" maxlength="50" placeholder="Nama Santri" value="{{ old('nama') }}" required/>
-                                        @error('nama')
+                                        <input class="form-control" id="inputName" name="NAMASANTRI" type="text" minlength="3" maxlength="50" placeholder="Nama Santri" required/>
+                                        {{-- @error('nama')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                        @enderror
+                                        @enderror --}}
 
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control @error('gender') is-invalid @enderror" name="gender" required>
+                                        <select class="form-control" name="GENDER" required>
                                             <option value="" disabled selected hidden>Jenis Kelamin</option>
                                             <option value="M">Laki-Laki</option>
                                             <option value="F">Perempuan</option>
                                         </select>
-                                        @error('gender')
+                                        {{-- @error('gender')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('kota_lhr') is-invalid @enderror" type="text" maxlength="40" name="kota_lhr" placeholder="Kota Lahir" value="{{ old('kota_lhr') }}" required/>
-                                        @error('kota_lhr')
+                                        <input class="form-control" type="text" name="TGLLAHIR" placeholder="Tanggal Lahir" onfocus="(this.type='date')" required/>
+                                        {{-- @error('tgl_lhr')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control @error('tgl_lhr') is-invalid @enderror" type="text" name="tgl_lhr" placeholder="Tanggal Lahir" onfocus="(this.type='date')" required/>
-                                        @error('tgl_lhr')
+                                        <input class="form-control" type="text" maxlength="40" name="KOTALHR" placeholder="Kota Lahir" required/>
+                                        {{-- @error('kota_lhr')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
-                                        <input class="form-control @error('nama_ortu') is-invalid @enderror" id="inputName" type="text" minlength="3" maxlength="50" name="nama_ortu" placeholder="Nama Orang Tua" value="{{ old('nama_ortu') }}" required/>
-                                        @error('nama_ortu')
-                                            <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input class="form-control @error('alamat_ortu') is-invalid @enderror" type="text" maxlength="100" name="alamat_ortu" placeholder="Alamat Orang Tua" value="{{ old('alamat_ortu') }}" required/>
-                                        @error('alamat_ortu')
-                                            <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required/>
-                                        @error('email')
+                                        <input class="form-control" id="inputName" type="text" minlength="3" maxlength="50" name="NAMAORTU" placeholder="Nama Orang Tua" value="{{ old('nama_ortu') }}" required/>
+                                        {{-- @error('nama_ortu')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                     <div class="col-md-6">
-                                        <input  class="form-control @error('hp') is-invalid @enderror" type="number" name="hp" placeholder="Telepon" value="{{ old('hp') }}" required/>
-                                        @error('hp')
+                                        <input class="form-control" type="text" maxlength="100" name="ALAMATORTU" placeholder="Alamat Orang Tua" required/>
+                                        {{-- @error('alamat_ortu')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                        @enderror
+                                        @enderror --}}
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-6">
+                                        <input  class="form-control" type="number" name="HP" placeholder="Telepon" required/>
+                                        {{-- @error('hp')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror --}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input class="form-control" id="inputEmail" type="email" name="EMAIL" placeholder="Email" required/>
+                                        {{-- @error('email')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror --}}
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" minlength="8" maxlength="32" name="password" placeholder="Password" required/>
-                                        @error('password')
+                                        <input class="form-control" id="inputPassword" type="password" minlength="8" maxlength="32" name="PASSWORD" placeholder="Password" required/>
+                                        {{-- @error('password')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
                                 </div>
                                 <div class="mt-4 mb-0">
-                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Daftar</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambahkan</button></div>
                                 </div>
                             </form>
                         </div>

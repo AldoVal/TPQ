@@ -30,14 +30,14 @@ Route::get('/santri-tambah','App\Http\Controllers\Santri@tambah');
 Route::post('/santri-simpan','App\Http\Controllers\Santri@store');
 Route::get('/santri-edit','App\Http\Controllers\Santri@edit');
 Route::post('/santri-update{IDSANTRI}','App\Http\Controllers\Santri@update');
-Route::get('/santri-delete{IDSANTRI}','App\Http\Controllers\Santri@hapus');
+Route::get('/santri-hapus{IDSANTRI}','App\Http\Controllers\Santri@hapus');
 
 Route::get('/peran','App\Http\Controllers\Peran@index');
-Route::get('/editperan','App\Http\Controllers\Peran@edit');
-Route::post('/proseseditperan/{IDPERAN}','App\Http\Controllers\Peran@update');
-Route::get('/tambahperan','App\Http\Controllers\Peran@tambah');
-Route::post('/simpanperan','App\Http\Controllers\Peran@store');
-Route::get('/hapusperan/{IDPERAN}','App\Http\Controllers\Peran@hapus');
+Route::get('/peran-tambah','App\Http\Controllers\Peran@tambah');
+Route::post('/peran-simpan','App\Http\Controllers\Peran@store');
+Route::get('/peran-edit','App\Http\Controllers\Peran@edit');
+Route::post('/peran-update/{IDPERAN}','App\Http\Controllers\Peran@update');
+Route::get('/peran-hapus/{IDPERAN}','App\Http\Controllers\Peran@hapus');
 Route::get('/detailperan','App\Http\Controllers\DetailPeran@index');
 
 //CRUD Guru

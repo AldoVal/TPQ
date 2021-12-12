@@ -22,13 +22,13 @@
 		<td>{{ $p->PERAN }}</td>
 		<td>{{ $p->AKTIF }}</td>
         <td>
-            <form action="{{ url('/editperan') }}" method="get">
+            <form action="{{ url('/peran-edit') }}" method="get">
                 <input hidden value="{{ $p->IDPERAN }}" name="IDPERAN">
                 <button type="submit" class="btn btn-info btn-sm")>Edit</button>
             </form>
         </td>
         <td>
-            <a href="{{ url('/hapusperan',$p->IDPERAN) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
+            <a href="{{ url('/peran-hapus',$p->IDPERAN) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
         </td>
 	</tr>
 
