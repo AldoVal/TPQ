@@ -21,15 +21,6 @@
 		<td>{{ $p->IDDETAILPERAN }}</td>
 		<td>{{ $p->IDPERAN }}</td>
 		<td>{{ $p->IDPENGURUS }}</td>
-        {{-- <td>
-            <form action="{{ url('/editperan') }}" method="get">
-                <input hidden value="{{ $p->IDPERAN }}" name="IDPERAN">
-                <button type="submit" class="btn btn-info btn-sm")>Edit</button>
-            </form>
-        </td>
-        <td>
-            <a href="{{ url('/hapusperan',$p->IDPERAN) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
-        </td> --}}
 	</tr>
 
 	    @endforeach

@@ -15,4 +15,8 @@ class ModelBab extends Model
         'JUDUL',
         'KETERANGAN'
     ];
+
+    public function buku(){
+        return $this->belongsTo(ModelBuku::class,'IDBUKU','IDBUKU');
+    }
 }

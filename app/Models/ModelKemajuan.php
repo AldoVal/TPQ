@@ -15,4 +15,9 @@ class ModelKemajuan extends Model
         'TANGGAL',
         'STATUS'
     ];
+
+    public function santri(){
+        return $this->belongsTo(Santri::class,'IDSANTRI','IDSANTRI');
+    }
+
 }

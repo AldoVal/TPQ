@@ -4,38 +4,20 @@
 
 <div class="container-fluid px-4">
 	<h1 class="mt-2 mb-4">Edit Santri</h1>
-	<form action = "{{ url('/santri-update',$request->IDSANTRI) }}" method = "post">
+	<form action = "{{ url('/santri-update',$request->IDSANTRI)  }}" method = "post">
 		@csrf
 			<div class="content">
-				{{-- <div class="row mb-3">
-				<input type="hidden" class="form-control" name='id' value="{{ $request->id }}"/>
+				<div class="row mb-3">
+				<input type="hidden" class="form-control" name='IDSANTRI' value="{{ $request->id }}"/>
 					<label  class="col-sm-2 col-form-label ">ID SANTRI</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="{{ $request->IDSANTRI }}" class="form-control" name='IDPERAN'>
+					  <input type="type" placeholder="{{ $request->IDSANTRI }}" class="form-control" name='IDSANTRI'>
 					</div>
-				</div> --}}
-				{{-- <div class="row mb-3">
-					<label for="inputJenisBarang" class="col-sm-2 col-form-label">Jenis Barang</label>
-					<div class="col-sm-4">
-					  	<input type="text" class="form-control" id="inputJenisBarang">
-						  <select class="form-select form-select-default" name="id_jb" aria-label=".form-select-default">
-							@foreach($peran as $p )
-								<option value="{{ $peran->id }}">{{ $item->jenis_barang }}</option>
-							@endforeach
-						  </select>
-					</div>
-				</div> --}}
-                {{-- <div class="row mb-3">
-                    <input type="hidden" class="form-control" name='id' value="{{ $request->id }}"/>
-					<label class="col-sm-2 col-form-label">NAMA SANTRI</label>
-					<div class="col-sm-4">
-					  <input type="text" placeholder="{{ $request->NAMASANTRI }}" class="form-control" name='NAMASANTRI'>
-					</div>
-				</div> --}}
+				</div>
                 <div class="row mb-3">
 					<label class="col-sm-2 col-form-label">Alamat</label>
 					<div class="col-sm-4">
-					  <input type="text" placeholder="{{ $request->HP }}" class="form-control" name='HP'>
+					  <input type="text" placeholder="{{ $request->ALAMATORTU }}" class="form-control" name='ALAMATORTU'>
 					</div>
 				</div>
 				<div class="row mb-3">

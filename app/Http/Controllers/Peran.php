@@ -36,9 +36,8 @@ class Peran extends Controller
 	public function update(Request $request)
 	{
 		DB::table('peran')
-        ->where('IDPERAN',$request->idperan)
+        ->where('IDPERAN',$request->IDPERAN)
         ->update([
-			'IDPERAN' => $request->IDPERAN,
 			'PERAN' => $request->PERAN,
 			'AKTIF' => $request->AKTIF
 		]);

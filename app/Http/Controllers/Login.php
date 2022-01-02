@@ -44,11 +44,9 @@ class Login extends Controller
         // if ($usernamea==$passworda) {
         //     echo "sama";
         // }
-
-
-        if($a!=$null)
+        if($b!=$null)
         {
-            if($usernamea==$passworda){
+            if($usernameb==$passwordb){
                 $asd 		= $Request->input();
                 $session 	= new session;
                 $session->name  = $asd['id'];
@@ -59,9 +57,9 @@ class Login extends Controller
             }else{
                 return redirect('/');}
             }
-        else if($b=!$null)
+       if($a!=$null)
         {
-            if($usernameb==$passwordb){
+            if($usernamea==$passworda){
                 $asd 		= $Request->input();
                 $session 	= new session;
                 $session->name  = $asd['id'];
@@ -71,7 +69,12 @@ class Login extends Controller
                 return redirect('/wali');
             }else{
                 return redirect('/');}
-            }
-
         }
+        else{
+            echo"Mohon masukkan username dan password yang benar";
+        }
+
+    }
+
 }
+

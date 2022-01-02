@@ -4,11 +4,11 @@
 
 <div class="container-fluid px-4">
 	<h1 class="mt-2 mb-4">Edit Peran</h1>
-	<form action = "{{ url('/proseseditperan',$request->IDPERAN) }}" method = "post">
+	<form action = "{{ url('/peran-update',$request->IDPERAN) }}" method = "post">
 		@csrf
 			<div class="content">
 				<div class="row mb-3">
-				<input type="hidden" class="form-control" name='id' value="{{ $request->id }}"/>
+				<input type="hidden" class="form-control" name='IDPERAN' value="{{ $request->id }}"/>
 					<label  class="col-sm-2 col-form-label ">ID Peran</label>
 					<div class="col-sm-4">
 					  <input type="text" placeholder="{{ $request->IDPERAN }}" class="form-control" name='IDPERAN'>
@@ -46,7 +46,7 @@
 				</div> --}}
 			</div>
 
-			<input type = 'submit' class="btn btn-primary" value = "Input Data"/>
+			<input type = 'submit' class="btn btn-primary"/>
 	</form>
 </div>
 @endsection

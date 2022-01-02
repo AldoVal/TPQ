@@ -67,9 +67,15 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Santri :</h6>
                         <a class="collapse-item" href="/kemajuan">Kemajuan</a>
-                        <a class="collapse-item" href="/detailkemajuan">Detail Kemajuan</a>
+                        {{-- <a class="collapse-item" href="/detailkemajuan">Detail Kemajuan</a> --}}
                     </div>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/author">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Mode Author</span>
+                </a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->

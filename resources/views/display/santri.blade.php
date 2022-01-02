@@ -13,6 +13,9 @@
 			<th>Gender</th>
 			<th>Tgl Lahir</th>
 			<th>Kota Lahir</th>
+            <th>Alamat Ortu</th>
+            <th>HP</th>
+            <th>Email</th>
             <th>Edit</th>
             <th>Delete</th>
 		</tr>
@@ -25,6 +28,9 @@
 		<td>{{ $s->GENDER }}</td>
 		<td>{{ $s->TGLLAHIR }}</td>
 		<td>{{ $s->KOTALHR }}</td>
+        <td>{{ $s->ALAMATORTU }}</td>
+        <td>{{ $s->HP }}</td>
+        <td>{{ $s->EMAIL }}</td>
         <td>
             <form action="{{ url('/santri-edit') }}" method="get">
                 <input hidden value="{{ $s->IDSANTRI }}" name="IDSANTRI">

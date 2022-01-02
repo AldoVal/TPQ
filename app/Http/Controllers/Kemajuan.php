@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ModelKemajuan;
+use App\Models\ModelSantri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\COntrollers\Controller;
@@ -10,15 +11,17 @@ use App\Http\COntrollers\Controller;
 class Kemajuan extends Controller
 {
     public function index(){
-        $santri = DB::table('kemajuan')->get();
-        return view('display.kemajuan',['kemajuan'=>$santri]);
+        $santri = DB::table('santri')->get();
+        return view('display.kemajuan',['santri'=>$santri]);
     }
     public function tambah(){
-        return view('display.kemajuan');
+        return view('tambah.kemajuan');
     }
 
-    public function store(Request $request)
-	{
+    public function store(Request $request){
+        $santri = DB::table('santri')->where('IDSANTRI',$request)->get();
+		return view('display.kemajuan',['santri' => $santri],['request' => $request]);
+
 		DB::table('kemajuan')->insert([
 			'IDKEMAJUAN' => $request->idkemajuan,
 			'IDSANTRI' => $request->idsantri,
@@ -33,17 +36,6 @@ class Kemajuan extends Controller
 	{
 		$kemajuan = DB::table('kemajuan')->where('IDKEMAJUAN',$request)->get();
 		return view('edit.kemajuan',['kemajuan' => $kemajuan],['request' => $request]);
-	}
-
-	public function update(Request $request)
-	{
-		DB::table('peran')
-        ->where('IDPERAN',$request->idkemajuan)
-        ->update([
-
-		    'STATUS' => $request->status
-		]);
-		return redirect('/peran');
 	}
 
 	public function hapus($id)

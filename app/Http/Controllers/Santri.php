@@ -48,7 +48,7 @@ class Santri extends Controller
 	public function update(Request $request)
 	{
 		DB::table('santri')
-        ->where('IDSANTRI',$request->idsantri)
+        ->where('IDSANTRI',$request->IDSANTRI)
         ->update([
             'ALAMATORTU' => $request->ALAMATORTU,
             'HP' => $request->HP,

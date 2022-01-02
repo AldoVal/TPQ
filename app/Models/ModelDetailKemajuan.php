@@ -14,4 +14,12 @@ class ModelDetailKemajuan extends Model
         'IDBAB',
         'KETERANGAN'
     ];
+    public function bab (){
+        return $this->belongsTo(ModelBab::class,'IDBAB','IDBAB');
+    }
+
+    public function kemajuan (){
+        return $this->belongsTo(ModelKemajuan::class,'IDKEMAJUAN','IDKEMAJUAN');
+    }
+
 }

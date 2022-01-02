@@ -1,6 +1,6 @@
-@extends('layout/wali')
+@extends('layout/guru')
 @section('content')
-<h1>Kemajuan</h1>
+<h1>Data Santri</h1>
 
 <br/>
 <br/>
@@ -8,36 +8,32 @@
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 	<thead>
 		<tr>
-			<th>ID KEMAJUAN</th>
-			<th>ID SANTRI</th>
-			<th>ID PENGURUS</th>
-			<th>TANGGAL</th>
-			{{-- <th>STATUS</th>
-            <th>Edit</th> --}}
+			<th>ID</th>
+			<th>Nama</th>
+			<th>Gender</th>
+            <th>Kemajuan</th>
+            <th>Detail</th>
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($kemajuan as $k)
+		@foreach($santri as $s)
 	<tr>
-		<td>{{ $k->IDKEMAJUAN }}</td>
-		<td>{{ $k->IDSANTRI }}</td>
-		<td>{{ $k->IDPENGURUS }}</td>
-		<td>{{ $k->TANGGAL }}</td>
-		<td>{{ $k->STATUS }}</td>
-        {{-- <td>
-            <form action="{{ url('/editkemajuan') }}" method="get">
-                <input hidden value="{{ $k->IDKEMAJUAN }}" name="IDKEMAJUAN">
-                <button type="submit" class="btn btn-info btn-sm")>Edit</button>
+		<td>{{ $s->IDSANTRI }}</td>
+		<td>{{ $s->NAMASANTRI }}</td>
+		<td>{{ $s->GENDER }}</td>
+        <td>
+            <form action="{{ url('/kemajuan-tambah') }}" method="get">
+                <input hidden value="{{ $s->IDSANTRI }}" name="IDSANTRI">
+                <button type="submit" class="btn btn-info btn-sm")>Tambah</button>
             </form>
-        </td> --}}
-        {{-- <td>
-            <a href="{{ url('/hapussantri',$k->IDKEMAJUAN) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
-        </td> --}}
+        </td>
+        <td>
+            <a href="{{ url('/kemajuan-detail',$s->IDSANTRI) }}"><button type="submit" class="btn btn-danger btn-sm">Detail</button></a>
+        </td>
 	</tr>
 	@endforeach
 	</tbody>
 
 </table>
-
 
 @endsection

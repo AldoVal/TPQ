@@ -51,14 +51,14 @@
                                     {{-- <label class="form-check-label" for="inputRememberPassword">Ingat Password</label> --}}
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <a class="small" href="forgot-password">Lupa Password?</a>
+                                    {{-- <a class="small" href="forgot-password">Lupa Password?</a> --}}
                                     <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Login</button></div>
                                 </div>
                             </form>
                         </div>
-                        <div class="card-footer text-center py-3">
+                        {{-- <div class="card-footer text-center py-3">
                             <div class="small"><a href="/register">Butuh Akun? Daftar!</a></div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
