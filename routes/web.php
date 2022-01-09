@@ -2,10 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\dataSantriController;
-use App\Http\Controllers\DataPengurusController;
-// use App\Models\Santri;
-// use App\Models\pengurus;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,17 +37,23 @@ Route::post('/peran-update/{IDPERAN}','App\Http\Controllers\Peran@update');
 Route::get('/peran-hapus/{IDPERAN}','App\Http\Controllers\Peran@hapus');
 Route::get('/detailperan','App\Http\Controllers\DetailPeran@index');
 
-Route::get('/buku','App\Http\Controllers\Buku@index');
-Route::get('/buku-tambah','App\Http\Controllers\Buku@tambah');
-Route::post('/buku-simpan','App\Http\Controllers\Buku@store');
-Route::get('/buku-hapus/{IDBUKU}','App\Http\Controllers\Buku@hapus');
-
 //CRUD Guru
 Route::get('/guru','App\Http\Controllers\Guru@index');
 Route::get('/kemajuan','App\Http\Controllers\Kemajuan@index');
 Route::get('/kemajuan-tambah','App\Http\Controllers\Kemajuan@tambah');
 Route::post('/kemajuan-simpan','App\Http\Controllers\Kemajuan@store');
 Route::get('/kemajuan-detail','App\Http\Controllers\DetailKemajuan@index');
+
+Route::get('/buku','App\Http\Controllers\Buku@index');
+Route::get('/buku-tambah','App\Http\Controllers\Buku@tambah');
+Route::post('/buku-simpan','App\Http\Controllers\Buku@store');
+Route::get('/buku-hapus/{IDBUKU}','App\Http\Controllers\Buku@hapus');
+
+Route::get('/bab','App\Http\Controllers\Bab@index');
+Route::get('/bab-tambah','App\Http\Controllers\Bab@tambah');
+Route::post('/bab-simpan','App\Http\Controllers\Bab@store');
+Route::get('/bab-hapus/{IDBAB}','App\Http\Controllers\Bab@hapus');
+
 // Route::post('/proseskemajuan','App\Http\Controllers\Kemajuan@update');
 
 //CRUD Wali

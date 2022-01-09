@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelSantri extends Model
 {
+        protected $guarded = ['id'];
         protected $table = 'santri';
-
         protected $fillable =[
             'IDSANTRI',
 			'NAMASANTRI',
@@ -23,4 +23,14 @@ class ModelSantri extends Model
             'TANGGALMASUK',
             'AKTIF'
         ];
+
+
+        public function kemajuan(){
+            return $this->hasMany(ModelKemajuan::class,'IDSANTRI','IDSANTRI');
+        }
+
+        public function user(){
+            return $this->hasOne(User::class,'IDSANTRI','id');
+        }
+
 }

@@ -27,4 +27,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function ModelSantri(){
+        return $this->hasOne(ModelSantri::class,'id','IDSANTRI');
+    }
+
+    public function ModelPengurus(){
+        return $this->hasOne(ModelPengurus::class, 'id', 'IDPENGURUS');
+    }
+
 }

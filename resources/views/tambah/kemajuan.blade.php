@@ -12,30 +12,50 @@
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" name="IDSANTRI" placeholder="ID SANTRI" required/>
+                                        <select class="form-control" name="IDSANTRI" required>
+                                                <option value={{ $IDSANTRI }}></option>
+                                        </select>
                                     </div>
                                 </div>
-
+                                <div class="row mb-2">
+                                      <div class="col-md-12">
+                                            <select class="form-control" name="IDPENGURUS" required>
+                                                <option value={{ auth()->user()->IDPENGURUS }}>{{ auth()->user()->nama }}</option>
+                                            </select>
+                                        @error('id_pengurus')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" name="IDPENGURUS" placeholder="ID PENGURUS" required/>
+                                        <input class="form-control @error('tanggal') is-invalid @enderror" type="text" name="tanggal" placeholder="Tanggal" onfocus="(this.type='date')" required/>
+                                        @error('tanggal')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" name="TANGGAL" placeholder="Tanggal" onfocus="(this.type='date')" required/>
-                                    </div>
+                                          <select class="form-control @error('status') is-invalid @enderror" name="status" required>
+                                              <option value="" disabled selected hidden>Status</option>
+                                              <option value="N">Naik</option>
+                                              <option value="T">Tetap</option>
+                                              <option value="M">Mundur</option>
+                                          </select>
+                                      @error('status')
+                                          <div class="invalid-feedback">
+                                          {{ $message }}
+                                      </div>
+                                      @enderror
+                                  </div>
                                 </div>
-
-                                <div class="row mb-2">
-                                    <div class="col-md-12">
-                                        <input class="form-control"  type="text" name="STATUS" placeholder="Status" required/>
-                                    </div>
-                                </div>
-
                                 <div class="mt-4 mb-0">
-                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambahkan</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambah</button></div>
                                 </div>
                             </form>
                         </div>

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelBab extends Model
 {
+    protected $guarded = ['IDBAB'];
     protected $table = 'bab';
     protected $fillable=[
         'IDBAB',
@@ -16,7 +17,13 @@ class ModelBab extends Model
         'KETERANGAN'
     ];
 
+    use HasFactory;
+
     public function buku(){
-        return $this->belongsTo(ModelBuku::class,'IDBUKU','IDBUKU');
+        return $this->belongsTo(ModelBuku::class,'IDBUKU','IDBBUKU');
+    }
+
+    public function detailKemajuan(){
+        return $this->hasMany(ModelDetailKemajuan::class,'IDBAB','IDBAB');
     }
 }

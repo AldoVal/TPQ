@@ -83,10 +83,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Data Peran :</h6>
-                        {{-- <a class="collapse-item" href="/editperan">Edit Peran</a> --}}
                         <a class="collapse-item" href="/peran-tambah">Tambah Peran</a>
                         <a class="collapse-item" href="/peran">Peran</a>
-                        {{-- <a class="collapse-item" href="/detailperan">Detail Peran</a> --}}
                     </div>
                 </div>
             </li>
