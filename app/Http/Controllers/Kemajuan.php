@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\ModelKemajuan;
+use App\Models\ModelDetailKemajuan;
 use App\Models\ModelSantri;
+use App\Models\ModelPengurus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\COntrollers\Controller;
+use App\Http\Controllers\Controller;
 
 class Kemajuan extends Controller
 {
@@ -14,16 +16,22 @@ class Kemajuan extends Controller
         $santri = DB::table('santri')->get();
         return view('display.kemajuan',['santri'=>$santri]);
     }
+
+    public function detailKemajuan($id){
+        return view('display.detailkemajuan',[
+            'detailKemajuan'    => ModelDetailKemajuan::where('id_kemajuan',$id)->with('bab.buku')->get(),
+            'IDKEMAJUAN'        => ModelKemajuan::find($id)->kemajuan->IDKEMAJUAN,
+            'IDSANTRI'          => ModelSantri::find($id)->santri->NAMASANTRI,
+            'NAMASANTRI'        => ModelSantri::find($id)->id
+        ]);
+    }
+
     public function tambah(){
         return view('tambah.kemajuan');
     }
 
     public function store(Request $request){
-        $santri = DB::table('santri')->where('IDSANTRI',$request)->get();
-		return view('display.kemajuan',['santri' => $santri],['request' => $request]);
-
 		DB::table('kemajuan')->insert([
-			'IDKEMAJUAN' => $request->idkemajuan,
 			'IDSANTRI' => $request->idsantri,
 			'IDPENGURUS' => $request->idpegurus,
             'TANGGAL' => $request->tanggal,

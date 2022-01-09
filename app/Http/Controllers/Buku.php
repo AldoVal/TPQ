@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ModelBuku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\COntrollers\Controller;
+use App\Http\Controllers\Controller;
 
 class Buku extends Controller
 {
@@ -28,25 +28,6 @@ class Buku extends Controller
 		]);
 		return redirect('/buku');
 	}
-
-	// public function edit(Request $request)
-	// {
-	// 	$santri = DB::table('buku')->where('IDBUKU',$request)->get();
-	// 	return view('edit.buku',['buku' => $santri],['request' => $request]);
-	// }
-
-	// public function update(Request $request)
-	// {
-	// 	DB::table('santri')
-    //     ->where('IDSANTRI',$request->IDSANTRI)
-    //     ->update([
-    //         'ALAMATORTU' => $request->ALAMATORTU,
-    //         'HP' => $request->HP,
-    //         'EMAIL' => $request->EMAIL,
-    //         'AKTIF' => $request->AKTIF
-	// 	]);
-	// 	return redirect('/santri');
-	// }
 
 	public function hapus($id)
 	{

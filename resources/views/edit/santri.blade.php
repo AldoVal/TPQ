@@ -1,7 +1,5 @@
 @extends('layout/author')
-
 @section('content')
-
 <div class="container-fluid px-4">
 	<h1 class="mt-2 mb-4">Edit Santri</h1>
 	<form action = "{{ url('/santri-update',$request->IDSANTRI)  }}" method = "post">
@@ -39,7 +37,6 @@
 					</div>
 				</div>
 			</div>
-
 			<input type = 'submit' class="btn btn-primary"/>
 	</form>
 </div>

@@ -22,13 +22,10 @@ class Login extends Controller
         ]);
     }
 
-    public function authenticate(Request $Request)
-    {
+    public function authenticate(Request $Request){
         $login = $Request['id'];
         $pw    = $Request['password'];
         $null = "[]";
-
-
 
         $a = ModelSantri::all()->where('IDSANTRI','=',$login);
         $usernamea = $a->where('IDSANTRI','=',$login);
@@ -38,12 +35,6 @@ class Login extends Controller
         $usernameb = $b->where('IDPENGURUS','=',$login);
         $passwordb = $b->where('PASSWORD','=',$pw);
 
-        // echo $a;
-        // echo $usernamea;
-        // echo $passworda;
-        // if ($usernamea==$passworda) {
-        //     echo "sama";
-        // }
         if($b!=$null)
         {
             if($usernameb==$passwordb){

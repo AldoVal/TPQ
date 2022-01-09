@@ -49,7 +49,7 @@ Route::get('/buku-hapus/{IDBUKU}','App\Http\Controllers\Buku@hapus');
 Route::get('/guru','App\Http\Controllers\Guru@index');
 Route::get('/kemajuan','App\Http\Controllers\Kemajuan@index');
 Route::get('/kemajuan-tambah','App\Http\Controllers\Kemajuan@tambah');
-Route::post('/kemajuan-simpan','App\Http\Controllers\Kemajuan@index');
+Route::post('/kemajuan-simpan','App\Http\Controllers\Kemajuan@store');
 Route::get('/kemajuan-detail','App\Http\Controllers\DetailKemajuan@index');
 // Route::post('/proseskemajuan','App\Http\Controllers\Kemajuan@update');
 

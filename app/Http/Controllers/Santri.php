@@ -23,7 +23,6 @@ class Santri extends Controller
 	public function store(Request $request)
 	{
 		DB::table('santri')->insert([
-			// 'IDSANTRI' => $request->IDSANTRI,
 			'NAMASANTRI' => $request->NAMASANTRI,
 			'GENDER' => $request->GENDER,
 			'TGLLAHIR' => $request->TGLLAHIR,
@@ -33,8 +32,6 @@ class Santri extends Controller
             'HP' => $request->HP,
             'EMAIL' => $request->EMAIL,
             'PASSWORD' => $request->PASSWORD,
-            // 'TANGGALMASUK' => $request->TANGGALMASUK,
-            // 'AKTIF' => $request->AKTIF
 		]);
 		return redirect('/santri');
 	}
