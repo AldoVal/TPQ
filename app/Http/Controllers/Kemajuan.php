@@ -12,7 +12,10 @@ use App\Http\Controllers\Controller;
 
 class Kemajuan extends Controller
 {
+
+
     public function index(){
+
         $santri = DB::table('santri')->get();
         return view('display.kemajuan',['santri'=>$santri]);
     }
@@ -26,8 +29,8 @@ class Kemajuan extends Controller
         ]);
     }
 
-    public function tambah(){
-        return view('tambah.kemajuan');
+    public function tambah($id){
+        return view('tambah.kemajuan',['kemajuan'=>$id]);
     }
 
     public function store(Request $request){

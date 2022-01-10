@@ -31,27 +31,17 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control @error('tanggal') is-invalid @enderror" type="text" name="tanggal" placeholder="Tanggal" onfocus="(this.type='date')" required/>
-                                        @error('tanggal')
-                                            <div class="invalid-feedback">
-                                            {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <input class="form-control @error('tanggal') is-invalid @enderror" type="text" name="TANGGAL" placeholder="Tanggal" onfocus="(this.type='date')" required/>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                          <select class="form-control @error('status') is-invalid @enderror" name="status" required>
+                                          <select class="form-control" name="STATUS" required>
                                               <option value="" disabled selected hidden>Status</option>
                                               <option value="N">Naik</option>
                                               <option value="T">Tetap</option>
                                               <option value="M">Mundur</option>
                                           </select>
-                                      @error('status')
-                                          <div class="invalid-feedback">
-                                          {{ $message }}
-                                      </div>
-                                      @enderror
                                   </div>
                                 </div>
                                 <div class="mt-4 mb-0">

@@ -17,7 +17,7 @@ class Login extends Controller
     public function index()
     {
         $xxx= Session::truncate();
-        return view('login', [
+        return view('hometpq', [
             "title" => "Login"
         ]);
     }
