@@ -9,36 +9,42 @@ use App\Models\ModelPengurus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class Kemajuan extends Controller
 {
 
 
     public function index(){
-
+        $pengurus = DB::table('pengurus')->get();
         $santri = DB::table('santri')->get();
-        return view('display.kemajuan',['santri'=>$santri]);
+        $kemajuan =DB::table('kemajuan')
+        ->join('santri','santri.IDSANTRI','=','kemajuan.IDSANTRI')
+        ->join('pengurus','pengurus.IDPENGURUS','=','kemajuan.IDPENGURUS')
+        ->get();
+        return view('display.kemajuan')->with('kemajuan',$kemajuan)->with('pengurus',$pengurus)->with('santri',$santri);
     }
 
     public function detailKemajuan($id){
-        return view('display.detailkemajuan',[
-            'detailKemajuan'    => ModelDetailKemajuan::where('id_kemajuan',$id)->with('bab.buku')->get(),
-            'IDKEMAJUAN'        => ModelKemajuan::find($id)->kemajuan->IDKEMAJUAN,
-            'IDSANTRI'          => ModelSantri::find($id)->santri->NAMASANTRI,
-            'NAMASANTRI'        => ModelSantri::find($id)->id
-        ]);
+     
     }
 
-    public function tambah($id){
-        return view('tambah.kemajuan',['kemajuan'=>$id]);
+    public function tambah(){
+        $pengurus = DB::table('pengurus')->get();
+        $santri = DB::table('santri')->get();
+        $kemajuan =DB::table('kemajuan')
+        ->join('santri','santri.IDSANTRI','=','kemajuan.IDSANTRI')
+        ->join('pengurus','pengurus.IDPENGURUS','=','kemajuan.IDPENGURUS')
+        ->get();
+        return view('tambah.kemajuan')->with('kemajuan',$kemajuan)->with('pengurus',$pengurus)->with('santri',$santri);
     }
 
     public function store(Request $request){
 		DB::table('kemajuan')->insert([
-			'IDSANTRI' => $request->idsantri,
-			'IDPENGURUS' => $request->idpegurus,
-            'TANGGAL' => $request->tanggal,
-            'STATUS' => $request->status
+			'IDSANTRI' => $request->IDSANTRI,
+			'IDPENGURUS' => $request->IDPENGURUS,
+            'TANGGAL' => $request->TANGGAL,
+            'STATUS' => $request->STATUS
 		]);
 		return redirect('/kemajuan');
 	}

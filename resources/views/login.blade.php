@@ -24,7 +24,7 @@
                         <div class="card-body">
 
                             {{-- jangan d hapus komen ini boiii --}}
-                            <form action="/login" method="post">
+                            <form action="/authenticate" method="post">
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-12">
@@ -39,11 +39,6 @@
                                 <div class="row mb-2">
                                     <div class="col-md-12">
                                         <input class="form-control"  id="inputPassword" type="password"  maxlength="32" name="password" placeholder="Password" required/>
-                                        @error('email')
-                                            <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-check mb-3">
@@ -56,9 +51,6 @@
                                 </div>
                             </form>
                         </div>
-                        {{-- <div class="card-footer text-center py-3">
-                            <div class="small"><a href="/register">Butuh Akun? Daftar!</a></div>
-                        </div> --}}
                     </div>
                 </div>
             </div>

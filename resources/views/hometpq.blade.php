@@ -27,8 +27,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Login</a></li>
-                 
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
@@ -42,14 +42,14 @@
                 <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
             </div>
         </header>
-       
-        
+
+
         <!-- About-->
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
-                 
+
                 </div>
                 <ul class="timeline">
                     <li>
@@ -62,7 +62,7 @@
                             <div class="timeline-body"><p class="text-muted">Berawal Dari Kegiatan Amal dan tugas maka kita membuat projek tpq online</p></div>
                         </div>
                     </li>
-                    
+
                     <li class="timeline-inverted">
                         <div class="timeline-image">
                             <h4>
@@ -102,7 +102,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Contact Us</h2>
-                  
+
                 </div>
                 <!-- * * * * * * * * * * * * * * *-->
                 <!-- * * SB Forms Contact Form * *-->

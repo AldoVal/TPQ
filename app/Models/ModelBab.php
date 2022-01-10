@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelBab extends Model
 {
-    protected $guarded = ['IDBAB'];
+
     protected $table = 'bab';
+    protected $primaryKey = 'IDBAB';
     protected $fillable=[
-        'IDBAB',
         'IDBUKU',
         'BAB',
         'JUDUL',
@@ -23,7 +23,7 @@ class ModelBab extends Model
         return $this->belongsTo(ModelBuku::class,'IDBUKU','IDBBUKU');
     }
 
-    public function detailKemajuan(){
+    public function babDetailKemajuan(){
         return $this->hasMany(ModelDetailKemajuan::class,'IDBAB','IDBAB');
     }
 }

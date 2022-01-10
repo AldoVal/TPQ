@@ -15,8 +15,9 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/','App\Http\Controllers\Login@index');
-Route::post('/login','App\Http\Controllers\Login@authenticate');
-Route::get('/register','App\Http\Controllers\Register@index');
+Route::get('/login','App\Http\Controllers\Login@login');
+
+Route::post('/authenticate','App\Http\Controllers\Login@authenticate');
 
 
 //CRUD Staff
@@ -42,7 +43,7 @@ Route::get('/guru','App\Http\Controllers\Guru@index');
 Route::get('/kemajuan','App\Http\Controllers\Kemajuan@index');
 Route::get('/kemajuan-tambah','App\Http\Controllers\Kemajuan@tambah');
 Route::post('/kemajuan-simpan','App\Http\Controllers\Kemajuan@store');
-Route::get('/kemajuan-detail','App\Http\Controllers\DetailKemajuan@index');
+Route::get('/kemajuan-detail/{IDKEMAJUAN}','App\Http\Controllers\DetailKemajuan@detail');
 
 Route::get('/buku','App\Http\Controllers\Buku@index');
 Route::get('/buku-tambah','App\Http\Controllers\Buku@tambah');
@@ -54,7 +55,6 @@ Route::get('/bab-tambah','App\Http\Controllers\Bab@tambah');
 Route::post('/bab-simpan','App\Http\Controllers\Bab@store');
 Route::get('/bab-hapus/{IDBAB}','App\Http\Controllers\Bab@hapus');
 
-// Route::post('/proseskemajuan','App\Http\Controllers\Kemajuan@update');
 
 //CRUD Wali
 Route::get('/wali','App\Http\Controllers\DataSantri@index');

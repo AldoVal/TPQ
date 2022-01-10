@@ -7,10 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelBuku extends Model
 {
-    protected $guarded = ['IDBUKU'];
     protected $table = 'buku';
+    protected $primaryKey = 'IDBUKU';
     protected $fillable=[
-        'IDBUKU',
         'BUKU',
         'KETERANGAN'
     ];

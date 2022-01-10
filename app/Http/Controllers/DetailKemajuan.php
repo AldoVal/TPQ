@@ -9,11 +9,33 @@ use Illuminate\Http\Request;
 class DetailKemajuan extends Controller
 {
     public function index(){
-        $santri = DB::table('detailkemajuan')->get();
-        return view('display.detailkemajuan',['detailkemajuan'=>$santri]);
+        $santri = DB::table('santri')->get();
+        $kemajuan = DB::table('kemajuan')->get();
+        $bab = DB::table('bab')->get();
+        $detail = DB::table('detailkemajuan')
+        ->join('santri','santri.IDSANTRI','=','kemajuan.IDKEMAJUAN')
+        ->join('kemajuan','kemajuan.IDKEMAJUAN','=','detailkemajuan.IDKEMAJUAN')
+        ->join('bab','bab.IDBAB','=','kemajuan.IDBAB')
+        ->get();
+        return view('display.detailkemajuan')->with('santri',$santri)->with('kemajuan',$kemajuan)->with('bab',$bab)->with('detailkemajuan',$detail);
+
     }
+
+    public function detail($id){
+        $santri = DB::table('santri')->get();
+        $kemajuan = DB::table('kemajuan')->get();
+        $bab = DB::table('bab')->get();
+        $detail = DB::table('detailkemajuan')
+        ->join('kemajuan','kemajuan.IDKEMAJUAN','=','detailkemajuan.IDKEMAJUAN')
+        ->join('santri','santri.IDSANTRI','=','kemajuan.IDSANTRI')
+        ->join('bab','bab.IDBAB','=','detailkemajuan.IDBAB')
+        ->where('kemajuan.IDKEMAJUAN',$id)
+        ->get();
+        return view('display.detailkemajuan')->with('santri',$santri)->with('kemajuan',$kemajuan)->with('bab',$bab)->with('detailkemajuan',$detail);
+    }
+
     public function tambah(){
-        return view('guru.kemajuan');
+        return view('tambah.detailkemajuan');
     }
 
     public function store(Request $request)
@@ -44,9 +66,4 @@ class DetailKemajuan extends Controller
 		return redirect('/detailkemajuan');
 	}
 
-	// public function hapus($id)
-	// {
-	// 	DB::table('kemajuan')->where('IDKEMAJUAN',$id)->delete();
-	// 	return redirect('/kemajuan');
-	// }
 }

@@ -17,12 +17,13 @@ class Bab extends Controller
 		return view('display.buku',['buku' => $buku]);
 	}
 
-	public function tambah($idbuku)
+	public function tambah()
 	{
-		return view('tambah.bab',[
-            'buku' => ModelBuku::find($idbuku)
-        ]);
-       
+        $buku = DB::table('buku')->get();
+        $bab = DB::table('bab')
+            ->join('buku','buku.IDBUKU','=','bab.IDBUKU')
+            ->get();
+		return view('tambah.bab')->with('buku',$buku)->with('bab',$bab);
 	}
 
 	public function store(Request $request)

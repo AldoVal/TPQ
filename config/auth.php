@@ -40,6 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'pengurus' => [
+          'driver' => 'session',
+          'provider' => 'pengurus',
+        ],
+
+        'santri' => [
+          'driver' => 'session',
+          'provider' => 'santri',
+        ],
     ],
 
     /*
@@ -64,11 +74,15 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'santri' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ModelSantri::class,
+        ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'pengurus' => [
+          'driver' => 'eloquent',
+          'model' => App\Models\ModelPengurus::class,
+        ],
     ],
 
     /*

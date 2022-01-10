@@ -15,21 +15,12 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($detailkemajuan as $k)
+		@foreach($detailkemajuan as $d)
 	<tr>
-		<td>{{ $k->IDDETAILKEMAJUAN }}</td>
-		<td>{{ $k->IDKEMAJUAN }}</td>
-		<td>{{ $k->IDBAB }}</td>
-        <td>{{ $k->KETERANGAN }}</td>
-        {{-- <td>
-            <form action="{{ url('/editperan') }}" method="get">
-                <input hidden value="{{ $p->IDPERAN }}" name="IDPERAN">
-                <button type="submit" class="btn btn-info btn-sm")>Edit</button>
-            </form>
-        </td>
-        <td>
-            <a href="{{ url('/hapusperan',$p->IDPERAN) }}"><button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button></a>
-        </td> --}}
+		<td>{{ $d->IDDETAILKEMAJUAN }}</td>
+		<td>{{ $d->IDKEMAJUAN }}</td>
+		<td>{{ $d->IDBAB }}</td>
+        <td>{{ $d->KETERANGAN }}</td>
 	</tr>
 
 	    @endforeach

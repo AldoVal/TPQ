@@ -13,25 +13,24 @@
                                 <div class="row mb-2">
                                     <div class="col-md-12">
                                         <select class="form-control" name="IDSANTRI" required>
-                                                <option value={{ $IDSANTRI }}></option>
+                                            @foreach ( $santri as $s)
+                                            <option value={{ $s->IDSANTRI }}>{{ $s->NAMASANTRI }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                       <div class="col-md-12">
                                             <select class="form-control" name="IDPENGURUS" required>
-                                                <option value={{ auth()->user()->IDPENGURUS }}>{{ auth()->user()->nama }}</option>
+                                                @foreach ($pengurus as $p)
+                                                <option value={{ $p->IDPENGURUS }}>{{ $p->NAMA }}</option>
+                                                @endforeach
                                             </select>
-                                        @error('id_pengurus')
-                                            <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control @error('tanggal') is-invalid @enderror" type="text" name="TANGGAL" placeholder="Tanggal" onfocus="(this.type='date')" required/>
+                                        <input class="form-control" type="text" name="TANGGAL" placeholder="Tanggal" onfocus="(this.type='date')" required/>
                                     </div>
                                 </div>
                                 <div class="row mb-2">

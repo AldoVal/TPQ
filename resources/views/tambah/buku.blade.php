@@ -1,4 +1,4 @@
-@extends('layout/author')
+@extends('layout/guru')
 @section('content')
 <h3>Tambahkan Buku</h3>
 <div id="layoutAuthentication_content">

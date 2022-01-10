@@ -18,8 +18,12 @@ class Login extends Controller
     {
         $xxx= Session::truncate();
         return view('hometpq', [
-            "title" => "Login"
+            "title" => "Welcome"
         ]);
+    }
+
+    public function login(){
+        return view('login',["title" => "Login"]);
     }
 
     public function authenticate(Request $Request){

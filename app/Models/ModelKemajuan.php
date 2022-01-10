@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ModelKemajuan extends Model
 {
 
-    protected $guarded = ['id'];
+
     protected $table = 'kemajuan';
+    protected $primariKey ='IDKEMAJUAN';
     protected $fillable=[
-        'IDKEMAJUAN',
+
         'IDSANTRI',
         'IDPENGURUS',
         'TANGGAL',
@@ -20,16 +21,16 @@ class ModelKemajuan extends Model
 
     use HasFactory;
 
-    public function santri(){
-        return $this->belongsTo(ModelSantri::class,'IDSANTRI');
+    public function kemajuanSantri(){
+        return $this->belongsTo(ModelSantri::class,'IDSANTRI','IDSANTRI');
     }
 
-    public function pengurus(){
-        return $this->belongsTo(ModelPengurus::class, 'IDPENGURUS');
+    public function kemajuanPengurus(){
+        return $this->belongsTo(ModelPengurus::class, 'IDPENGURUS','IDPENGURUS');
     }
 
     public function detailKemajuan(){
-        return $this->hasMany(ModelDetailKemajuan::class, 'IDKEMAJUAN');
+        return $this->hasMany(ModelDetailKemajuan::class, 'IDDETAILKEMAJUAN');
     }
 
 }
